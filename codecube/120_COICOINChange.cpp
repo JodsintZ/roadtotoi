@@ -1,48 +1,67 @@
- #include <bits/stdc++.h>
+#include <bits/stdc++.h>>
 
- using namespace std;
+using namespace std;
 
- const int N = 1e6+5;
+const int N = 1e6 + 5;
+const int M = 1e7;
 
- int P, M, K;
- int a[11];
- int dp[N] ,pre[N];
- int cur;
- int cnt[15];
+int q, p, m, k, c[15], fin[15],finn[15], dp[N], pre[N]; // c < 10
+int ansl, ans, ansr, temp;
+int ransr, lansl;
+map<int,int> v;
 
- int main(){
-    int ans = N;
-    for( int i = 0; i < N; i++) {
-        dp[i] = N;
+int main () {
+    scanf("%d %d %d", &p, &m, &k);
+    for(int i = 0; i < k; i++) {
+        scanf("%d", &temp);
+        c[i] = temp;
+        v.emplace(temp,i);
     }
-    scanf("%d %d %d", &P, &M, &K);
-    for(int i = 0; i < K; i++) {
-        scanf("%d", a + i);
+    for(int i = 0; i <= m; i++) {
+        dp[i] = M;
     }
     dp[0] = 0;
-    for(int i = 0; i < M; i++) {
-        for(int j = 0; j < K; j++) {
-            if((i - a[j]) >= 0 ) {
-                if(dp[i-a[j]] + 1 < dp[i]) {
-                    dp[i] = dp[i-a[j]] + 1;
-                    pre[i] = j;
+    for(int j = 0; j < k; j++) { //for(int i = 1; i <= m ; i++) swap with lower loop
+        for(int i = 1; i <= m ; i++) { //for(int j = 0; j < k; j++)
+            if (i >= c[j]) { //dp[i] = min (dp[i], dp[i-c[j]] + 1);
+                if(dp[i] > dp[i-c[j]] + 1) {
+                    dp[i] = dp[i-c[j]] + 1;
+                    pre[i] = c[j];
                 }
             }
         }
     }
-    for(int i = P; i < M; i++) {
-        //ans = min(dp[i] + dp[i-P], ans);
-        if(dp[i] + dp[i-P] < ans) {
-            ans = dp[i] + dp[i-P];
-            cur = i;
+
+    ans = INT_MAX;
+    for(int i = p,temp; i <= m; i++) {
+        temp = dp[i] + dp[i-p];
+        if(temp < ans) {
+            ans = temp;
+            ansr = dp[i];
+            ansl = dp[i-p];
+            ransr = i;
+            lansl = i-p;
         }
     }
-    int now = cur - p;
-    while(now != 0) {
-        cnt[pre[now]]++;
-        now -= a[pre[now]];
+    printf("%d %d \n", ansr, ansl);
+    //ansr input
+    int i = ransr;
+    while( i != 0) {
+        fin[v[pre[i]]]++;
+        i -= pre[i];
     }
-
-    printf("%d", ans);
+    for(int i = 0; i < k; i++) {
+        cout << fin[i] << " ";
+    }
+    cout <<endl;
+    //return lansl
+    int q = lansl;
+    while( q != 0) {
+        finn[v[pre[q]]]++;
+        q -= pre[q];
+    }
+    for(int q = 0; q < k; q++) {
+        cout << finn[q]<< " ";
+    }
     return 0;
- }
+}
