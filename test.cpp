@@ -7,6 +7,7 @@ int main() {
     //cd
     //g++ file_name.cpp && ./a.exe (Windows)
     //g++ file_name.cpp && ./a.out (Linux)
-
+    //boi
+    
     return 0;
 }
