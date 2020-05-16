@@ -12,6 +12,7 @@ int main() {
     for(int i = 0, t; i < n; i++) {
         scanf("%d", &t);
         s.emplace(t);
+        //s.erase(5);
     }
     for(auto e : s) printf("%d ", e);
     auto a = s.find(5); // USE TO  ITERATE
@@ -21,5 +22,6 @@ int main() {
     //or
     if(s.count(5)) printf("k"); //same as s != end
     //count return 1 if find it else 0
+    //if multiset return amount
     return 0;
 }
