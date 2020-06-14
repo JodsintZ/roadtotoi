@@ -8,6 +8,10 @@
 
 using namespace std;
 
+//too ez to compliment
+//down below using mst with dp 
+//another solution(haven't tried yet) is b-search all max ans and normal dfs
+
 const int N = 2505;
 
 int n, m, st, en, p, dp[N];
