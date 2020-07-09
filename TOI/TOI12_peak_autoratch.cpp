@@ -1,10 +1,13 @@
 #include <bits/stdc++.h>
+
 using namespace std;
+
 #define endl '\n'
 #define MOD 1e9 + 7
-
-int main()
-{
+//i finally got it after read the question wrong. But im too lazy to write my own,
+//so here is autoratch's code.
+// - JodsintZ
+int main() {
     ios_base::sync_with_stdio(0); cin.tie(0);
 
     int n,k;
@@ -32,7 +35,7 @@ int main()
         if(a[i]>a[i-1] and a[i]>a[i+1]) q.push(a[i]);
     }
 
-    if(q.empty()){ cout << "-1"; return 0; }
+    if(q.empty()) { cout << "-1"; return 0; }
 
     vector<int> ans;
     int m = 0,p = 0;

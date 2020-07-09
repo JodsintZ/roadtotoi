@@ -11,6 +11,9 @@ using namespace std;
 const int N = 1e9 + 7;
 const int M = 1e3+5;
 
+//this one still wrong , to fix u need to do coordinate compression and use 
+//some formula to calculate factorial in O(logN) and normal dp below that's it.
+
 int dp[M][M];
 int n, q, x, y;
 

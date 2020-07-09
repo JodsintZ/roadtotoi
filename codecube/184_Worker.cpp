@@ -4,10 +4,13 @@
 
 using namespace std; //mst
 
+// A MST that connect everyone will boss
+// and others from the problems given
+
 const int N = 1e3+5;
 
 int n, b, a[N], par[N]; // boss is node 0
-priority_queue < tii, vector<tii>, greater<tii>> g, mst;
+priority_queue <tii, vector<tii>, greater<tii>> g, mst;
 long ans;
 
 int find(int x) { return par[x] = par[x] == x ? x : find(par[x]); }

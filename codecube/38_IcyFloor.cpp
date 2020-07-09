@@ -6,7 +6,8 @@ using namespace std;
 
 const int N = 1e3+5;
 const int M = 2e9;
-
+//just normal bfs put it in queue
+//to lazy to do it again
 bool a[N][N];
 int dp[N][N][4], n;
 queue <tii> Q;

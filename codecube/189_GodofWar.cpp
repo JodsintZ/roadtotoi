@@ -7,6 +7,8 @@
 
 using namespace std;
 
+//dijkstra with stat the '1' meant already used the free one
+
 const int N = 1e5+5;
 const int M = 2e9+5;
 
