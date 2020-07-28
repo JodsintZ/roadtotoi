@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 
-using namespace std
+using namespace std;
 
-;int main() {
+int main() {
 	int n,w;
 	scanf("%d%d",&n,&w);
 	long long arr[n+w-1];

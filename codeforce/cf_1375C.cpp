@@ -2,6 +2,9 @@
 
 using namespace std;
 
+//can be greedy to check only the first one and the last one
+//if the first one is lower then it's always possible 100%
+
 void solve() {
     int a, b, n, tmp;
     scanf("%d", &n);
