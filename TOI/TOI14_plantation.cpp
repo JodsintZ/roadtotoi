@@ -23,14 +23,13 @@ long solve(int l, int r) {
 
 	long del = min(left, right);
 	int bar = P[m].x;
-	vector<pii> ap;
+	static vector<pii> ap;
 	for(int i = l; i <= r; i++) if(d(P[i], pii(bar, P[i].y)) <= del) ap.emplace_back(P[i]);
 	for(int i = 0; i < ap.size(); i++)
 		for(int j = 1; j <= 8; j++) {
-            if(i + j >= ap.size() ) continue;
+            if(i + j >= ap.size()) continue;
 			del = min(del, d(ap[i], ap[j+i]));
 		}
-
 	return del;
 }
 

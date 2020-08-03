@@ -28,8 +28,7 @@ int main() {
         pii now = Q.top();
         Q.pop();
         int u = now.y, dist = now.x;
-      //  if(dist != dp[u]) continue;
-
+        if(dist != dp[u]) continue;
         for(pii v : g[u]) {
             if(dist + v.y < dp[v.x]) {
                 dp[v.x] = dist + v.y;

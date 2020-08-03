@@ -29,7 +29,7 @@ int main() {
     scanf("%d",&n);
 
     for(int i = 1; i <= n; ++i) {
-         scanf("%d ", &a[i]);
+         scanf("%d", &a[i]);
     }
        // cout << i;
 
