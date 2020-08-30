@@ -15,7 +15,7 @@ priority_queue<iii, vector<iii>, greater<iii> > Q;
 
 int main() {
     scanf("%d", &n);
-    for(int i = 1; i <= n; i++) scanf("%lld", cost+i);
+    for(int i = 1; i <= n; i++) scanf("%lld", cost+i); scanf("%lld", &cost[i] or cost+ i)
     scanf("%d %d %d %d", &st, &en, &F, &m);
     for(int i = 1; i <= m; i++) {
         int u, v, w;
@@ -30,7 +30,6 @@ int main() {
         iii now = Q.top();
         Q.pop();
         int u = get<1>(now), f = get<2>(now), k = get<3>(now);
-
         if(get<0>(now) != dist[u][f][k]) continue; // don't forget this
         //Go to next node
         for(pii vw : g[u]) {
@@ -52,6 +51,5 @@ int main() {
         }
     }
     printf("%lld\n", dist[en][F][1]);
-
     return 0;
 }

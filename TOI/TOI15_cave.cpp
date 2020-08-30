@@ -39,7 +39,7 @@ int main () {
         Q.pop();
         long dist = get<0>(now);
         int b = get<1>(now), u = get<2>(now);
-        if(dist != dp[b][u] && b + 1 > e) continue;
+        if(dist != dp[b][u] || b + 1 > e) continue;
         for(pii v : g[u]) {
             if(dist +  1ll*v.y < dp[b+1][v.x] ) {
                 dp[b+1][v.x] = dist + 1ll* v.y;

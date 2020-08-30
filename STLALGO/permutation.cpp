@@ -23,6 +23,6 @@ int main () {
   } while ( next_permutation(myints,myints+n) );
 
   cout << "After loop: " << myints[0] << ' ' << myints[1] << ' ' << myints[2] << '\n';
-
+  
   return 0;
 }
