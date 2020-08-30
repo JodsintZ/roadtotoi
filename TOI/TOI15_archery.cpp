@@ -8,32 +8,42 @@
 using namespace std;
 
 const int N = 5e5+5;
+const int M = 8e18;
 
-int n, mm;
-long sum, temp;
-vector<pii> v(N); // x pos y max
+pair<long, long> ans;
+vector<pii> v[N];
+long a[N], b[N];
+int n, m, mm;
 
 int main() {
-    mm = 2e9;
+    ans = {M, M};
     scanf("%d", &n);
-    for(int i = 0, t; i < n; i++) {
+    for(int i = 1, t; i <= n; i++) {
         scanf("%d", &t);
-        v[i].y = t;
+        v[i].y = t; //max hieght
         mm = min(mm, t);
     }
-    for(int i = 0, t; i < n; i++) {
+    for(int i = 1, t; i <= n; i++) {
         scanf("%d", &t);
-        v[i].x = t;
+        v[i].x = t; //position
     }
-    sort(v.begin(),v.end());
-    //end of input
+    sort(v.begin(), v.end());
+    for(int i = 1; i <= n; i++) {
+        a[i] = a[i-1] + v[i].y;
+    }
+    for(int i = 1; i <= n; i++) {
+        b[i] = b[i-1] + v[i].x;
+    }
 
-    for(int i = 0; i < n; i++) {
-        sum += (v[i].x - v[0].x);
-    }
-    for(int i = 1; i < n; i++) {
-        if(v[i].x > mm) break;
-        sum += (v[i-1].y - v[i].x + v[i-1].x + 1) - (v[i].x - v[i-1].x * (n-i) ) + (v[i].x - v[i-1].x * i);
+    //bruh like this should be it
+    //Q is how do I next ptr cuz it's not always up by 1
+    // or i can just do that and check < instead of <= 
+    int ptr = 1;
+    while(ptr != mm) {
+        auto lb = lower_bound(v.begin(), v.end(),pii(ptr,-1));
+        auto ub = lower_bound(v.begin(), v.end(),pii(ptr+1,-1));
+        long tt = a[ptr-1] - (lb-1) + b[n] - b[ub-1] - (n-ub) * ptr;
+        if(ans.x < ())
     }
 
 }
