@@ -33,6 +33,7 @@ int main() {
             ans += c;
         }
     }
+    int find(int x) { return par[x] = x == par[x] ? x : find(par[x]) }
     printf("%lld ", ans);
     return 0;
 }

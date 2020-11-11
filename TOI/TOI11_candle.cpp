@@ -2,11 +2,15 @@
 
 using namespace std;
 
+#define pii pair<int, int>
+#define x first
+#define y second
+
 const int N = 2005;
 int A[N][N];
 int n, m;
 bool visited[N][N];
-stack<pair<int, int> > q;
+queue<pair<int, int> > q;
 int R[8] = {-1, -1, -1, 0, 0, 1, 1, 1};
 int RR[8] = {-1, 0, 1, -1, 1, 0, -1, 1};
 int ans;
@@ -26,7 +30,7 @@ int main(){
             if(!visited[i][j] && A[i][j] == 1)ans++;//printf("ans = %d ij %d %d\n", ans, i, j);
             if(A[i][j] == 1)q.emplace(i, j);
             while(!q.empty()){
-                int x = q.top().first, y = q.top().second;
+                int x = q.front().first, y = q.front().second;
                 q.pop();
                 if(visited[x][y])continue;
                 for(int k = 0; k < 8; k++){
@@ -36,6 +40,6 @@ int main(){
                 visited[x][y] = true;
             }
         }
-    printf("%d", ans);
+    printf("%d ", ans);
     return 0;
 }
