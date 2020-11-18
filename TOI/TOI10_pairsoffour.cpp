@@ -20,6 +20,19 @@ int solve(int l, int r) {
     return dp[l][r];
 }
 
+int solve(int l, int r) {
+
+    if(dp[l][r] != - 1) return dp[l][r];
+    int tmp = 0;
+    if(l == r) ;
+    else if(l + 1 == r && a[l] == a[r]) tmp = 1;
+    else if(l + 1 == r) tmp = 0;
+    else if(a[l] = a[r]) tmp = solve(l+1, r-1) + 1;
+    else for(int i = l+1; i <= r; i++) tmp = max(tmp, solve(l, i-1), +solve(i ,r ));
+    dp[l][r] = tmp;
+    return dp[l][r];
+}
+
 int main() {
     scanf("%d", &n);
     for(int i = 0; i < n; i++) {

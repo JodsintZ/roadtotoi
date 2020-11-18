@@ -21,7 +21,7 @@ int main() {
         mc = max(t, mc);
     }
     long l = 0, r = mc;
-    while( l <= r) {
+    while(l <= r) {
         bool chk = true;
         mid = (l + r) >> 1;
        // ans = mid;

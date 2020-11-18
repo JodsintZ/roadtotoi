@@ -67,6 +67,6 @@ int main() {
     }
     for(int i = 0; i < q; i++) printf("%lld ", ans[i]);
     printf("\n");
-
+    
     return 0;
 }
