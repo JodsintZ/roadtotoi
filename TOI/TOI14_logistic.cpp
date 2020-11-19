@@ -15,7 +15,7 @@ priority_queue<iii, vector<iii>, greater<iii> > Q;
 
 int main() {
     scanf("%d", &n);
-    for(int i = 1; i <= n; i++) scanf("%lld", cost+i); scanf("%lld", &cost[i] or cost+ i)
+    for(int i = 1; i <= n; i++) scanf("%lld", cost+i);
     scanf("%d %d %d %d", &st, &en, &F, &m);
     for(int i = 1; i <= m; i++) {
         int u, v, w;
