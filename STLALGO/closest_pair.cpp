@@ -8,7 +8,7 @@
 using namespace std;
 
 const int N = 1e5+5;
-
+// the 8 things proven by 4 corner of each rectangle
 int T;
 pii P[N];
 

@@ -3,11 +3,10 @@
 using namespace std;
 
 const int N = 1e5+5;
-
-int main()
-{
+//geeks for geeks i think. not sure
+int main() {
     // Input vector
-    std::vector<int> v{ 10, 20, 30, 40, 50 };
+    std::vector<int> v{ 4, 10, 20, 30, 40, 50 };
 
     // Print vector
     std::cout << "Vector contains :";
@@ -21,13 +20,11 @@ int main()
     low1 = std::lower_bound(v.begin(), v.end(), 5);
     low2 = std::lower_bound(v.begin(), v.end(), 55);
 
-    // Printing the lower bounds
-    std::cout
-        << "\nlower_bound for element 35 at position : "
-        << (low1 - v.begin());
-    std::cout
-        << "\nlower_bound for element 55 at position : "
-        << (low2 - v.begin());
-
+    cout << (low1 - v.begin());
+    cout << (low2 - v.begin());
+    cout << "\n";
+    
+    printf("%d %d", *low1, v[low1-v.begin()]);
+    
     return 0;
 }
