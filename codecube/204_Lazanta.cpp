@@ -7,6 +7,11 @@
 
 using namespace std;
 
+/*
+notmal bitmask dijkstra with 4 state ( remember it's 1 << 4)
+- written by pep
+
+*/
 const int N = 5e4 + 5;
 const char xmas[10] = "XMAS";
 

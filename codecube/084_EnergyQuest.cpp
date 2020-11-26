@@ -7,7 +7,7 @@
 #define long long long
 
 using namespace std;
-
+//just realized it's unfinished
 const int N = 1e4+5;
 const int M = 1e5+5;
 
